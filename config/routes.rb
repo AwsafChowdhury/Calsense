@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'diet_plans/index'
+  get 'diet_plans/show'
   get 'surveys/new'
   get 'surveys/create'
   get 'welcome/index'
