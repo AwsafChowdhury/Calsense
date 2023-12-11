@@ -1,0 +1,9 @@
+<!-- app/views/surveys/show.html.erb -->
+<h1>Survey Details</h1>
+<p><strong>Age:</strong> <%= @survey.age %></p>
+<p><strong>Weight:</strong> <%= @survey.weight %> kgs</p>
+<p><strong>Height:</strong> <%= @survey.height %> meters</p>
+<p><strong>Gender:</strong> <%= @survey.gender %></p>
+<p>Survey successfully submitted!</p>
+<%= link_to "Go Back", root_path, class: "button is-info" %>
+

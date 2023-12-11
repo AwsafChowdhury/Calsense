@@ -1,0 +1,18 @@
+<!-- app/views/surveys/new.html.erb -->
+<h1>Take Survey</h1>
+<%= form_with(model: @survey, url: surveys_path) do |form| %>
+  <%= form.label :age %>
+  <%= form.text_field :age %>
+
+  <%= form.label :weight, "Weight (in kgs)" %>
+  <%= form.number_field :weight, placeholder: "Enter weight in kgs" %>
+
+  <%= form.label :height, "Height (in meters)" %>
+  <%= form.number_field :height, placeholder: "Enter height in meters" %>
+
+  <%= form.label :gender %>
+  <%= form.select :gender, ['Male', 'Female', 'Other'] %>
+
+  <%= form.submit "Submit Survey" %>
+<% end %>
+
