@@ -1,0 +1,35 @@
+<h1>New Diet Plan</h1>
+
+<%= form_with(model: @diet_plan, url: diet_plans_path) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :category %>
+  <%= form.select :category, ['Loosing weight', 'Staying Fit', 'Gaining weight'] %>
+
+  <%= form.label :recommended_calories %>
+  <%= form.number_field :recommended_calories %>
+
+  <%= form.label :breakfast_calories %>
+  <%= form.number_field :breakfast_calories %>
+
+  <%= form.label :lunch_calories %>
+  <%= form.number_field :lunch_calories %>
+
+  <%= form.label :snacks_calories %>
+  <%= form.number_field :snacks_calories %>
+
+  <%= form.label :dinner_calories %>
+  <%= form.number_field :dinner_calories %>
+
+  <%= form.label :carbohydrates %>
+  <%= form.number_field :carbohydrates %>
+
+  <%= form.label :proteins %>
+  <%= form.number_field :proteins %>
+
+  <%= form.label :fats %>
+  <%= form.number_field :fats %>
+
+  <%= form.submit "Create Diet Plan" %>
+<% end %>

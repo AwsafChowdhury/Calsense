@@ -2,4 +2,5 @@
     background-color: orange; /* Set the background color to orange */
     /* Add any other styles or adjustments you need */
   }
+  @import 'bootstrap';
   

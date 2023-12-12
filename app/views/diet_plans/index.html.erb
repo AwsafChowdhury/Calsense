@@ -1,0 +1,92 @@
+<section class="section">
+  <div class="container">
+    <h1 class="title has-text-centered">All Diet Plans</h1>
+    <div class="buttons">
+      <button class="button is-primary" onclick="filterPlans('Loosing weight')">Loosing Weight</button>
+      <button class="button is-primary" onclick="filterPlans('Staying Fit')">Staying Fit</button>
+      <button class="button is-primary" onclick="filterPlans('Gaining weight')">Gaining Weight</button>
+      <button class="button is-info" onclick="resetFilters()">Reset</button>
+    </div>
+    <div class="columns">
+      <div class="column">
+        <h2 class="title is-4">Loosing Weight Plans</h2>
+        <% @weight_loss_plans.each do |plan| %>
+          <div class="box loosing-weight">
+            <div class="box mb-4">
+              <p class="subtitle is-6"><strong><%= plan.name %></strong></p>
+              <p><strong>Category:</strong> <%= plan.category %></p>
+              <p><strong>Recommended Calories:</strong> <%= plan.recommended_calories %></p>
+              <p><strong>Breakfast Calories:</strong> <%= plan.breakfast_calories %></p>
+              <p><strong>Lunch Calories:</strong> <%= plan.lunch_calories %></p>
+              <p><strong>Snacks Calories:</strong> <%= plan.snacks_calories %></p>
+              <p><strong>Dinner Calories:</strong> <%= plan.dinner_calories %></p>
+              <p><strong>Carbohydrates:</strong> <%= plan.carbohydrates %></p>
+              <p><strong>Proteins:</strong> <%= plan.proteins %></p>
+              <p><strong>Fats:</strong> <%= plan.fats %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="column">
+        <h2 class="title is-4">Staying Fit Plans</h2>
+        <% @staying_fit_plans.each do |plan| %>
+          <div class="box staying-fit">
+            <div class="box mb-4">
+              <p class="subtitle is-6"><strong><%= plan.name %></strong></p>
+              <p><strong>Category:</strong> <%= plan.category %></p>
+              <p><strong>Recommended Calories:</strong> <%= plan.recommended_calories %></p>
+              <p><strong>Breakfast Calories:</strong> <%= plan.breakfast_calories %></p>
+              <p><strong>Lunch Calories:</strong> <%= plan.lunch_calories %></p>
+              <p><strong>Snacks Calories:</strong> <%= plan.snacks_calories %></p>
+              <p><strong>Dinner Calories:</strong> <%= plan.dinner_calories %></p>
+              <p><strong>Carbohydrates:</strong> <%= plan.carbohydrates %></p>
+              <p><strong>Proteins:</strong> <%= plan.proteins %></p>
+              <p><strong>Fats:</strong> <%= plan.fats %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="column">
+        <h2 class="title is-4">Gaining Weight Plans</h2>
+        <% @gaining_weight_plans.each do |plan| %>
+          <div class="box gaining-weight">
+            <div class="box mb-4">
+              <p class="subtitle is-6"><strong><%= plan.name %></strong></p>
+              <p><strong>Category:</strong> <%= plan.category %></p>
+              <p><strong>Recommended Calories:</strong> <%= plan.recommended_calories %></p>
+              <p><strong>Breakfast Calories:</strong> <%= plan.breakfast_calories %></p>
+              <p><strong>Lunch Calories:</strong> <%= plan.lunch_calories %></p>
+              <p><strong>Snacks Calories:</strong> <%= plan.snacks_calories %></p>
+              <p><strong>Dinner Calories:</strong> <%= plan.dinner_calories %></p>
+              <p><strong>Carbohydrates:</strong> <%= plan.carbohydrates %></p>
+              <p><strong>Proteins:</strong> <%= plan.proteins %></p>
+              <p><strong>Fats:</strong> <%= plan.fats %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <script>
+      function filterPlans(category) {
+        var plans = document.querySelectorAll('.box.' + category.toLowerCase().replace(' ', '-'));
+        plans.forEach(function (plan) {
+            plan.style.display = 'block';
+        });
+
+        var otherPlans = document.querySelectorAll('.box:not(.' + category.toLowerCase().replace(' ', '-') + ')');
+        otherPlans.forEach(function (plan) {
+            plan.style.display = 'none';
+        });
+      }
+
+      function resetFilters() {
+        var plans = document.querySelectorAll('.box');
+        plans.forEach(function (plan) {
+            plan.style.display = 'block';
+        });
+      }
+    </script>
+  </div>
+</section>
+

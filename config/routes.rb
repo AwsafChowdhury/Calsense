@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'diet_plans/index'
+  get 'diet_plans/show'
   get 'surveys/new'
   get 'surveys/create'
   get 'welcome/index'
@@ -9,6 +11,8 @@ Rails.application.routes.draw do
 
   resources :entries
   root to: "welcome#index" 
+  resources :diet_plans, only: [:index, :show]
+
  
   # Assuming the welcome page is controlled by WelcomeController#index
 

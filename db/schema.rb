@@ -10,7 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_10_192632) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_12_061126) do
+  create_table "admin_users", force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "diet_plans", force: :cascade do |t|
+    t.string "name"
+    t.string "category"
+    t.integer "recommended_calories"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "breakfast_calories"
+    t.integer "lunch_calories"
+    t.integer "snacks_calories"
+    t.integer "dinner_calories"
+    t.integer "carbohydrates"
+    t.integer "proteins"
+    t.integer "fats"
+  end
+
   create_table "entries", force: :cascade do |t|
     t.string "meal_type"
     t.integer "calories"
