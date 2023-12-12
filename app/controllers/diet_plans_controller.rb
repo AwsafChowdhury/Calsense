@@ -1,5 +1,4 @@
 class DietPlansController < ApplicationController
-<<<<<<< HEAD
 
   def index
     @weight_loss_plans = DietPlan.where(category: 'Loosing weight')
@@ -34,11 +33,5 @@ class DietPlansController < ApplicationController
       :breakfast_calories, :lunch_calories, :snacks_calories, :dinner_calories,
       :carbohydrates, :proteins, :fats
     )
-=======
-  def index
-  end
-
-  def show
->>>>>>> origin/main
   end
 end
