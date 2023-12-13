@@ -5,5 +5,7 @@ class DietPlan < ApplicationRecord
     # Add the new fields with appropriate validations
     validates :breakfast_calories, :lunch_calories, :snacks_calories, :dinner_calories,
               :carbohydrates, :proteins, :fats, presence: true
+    belongs_to :nutrition_expert
+              
   end
   

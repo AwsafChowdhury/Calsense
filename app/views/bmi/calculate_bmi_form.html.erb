@@ -1,9 +1,21 @@
-<%= form_tag(calculate_bmi_path, method: :post) do %>
-  <%= label_tag :weight, 'Weight (kg):' %>
-  <%= text_field_tag :weight %>
+<%= form_tag(calculate_bmi_path, method: :post, class: 'box') do %>
+  <div class="field">
+    <%= label_tag :weight, 'Weight (kg):', class: 'label' %>
+    <div class="control">
+      <%= text_field_tag :weight, nil, class: 'input' %>
+    </div>
+  </div>
 
-  <%= label_tag :height, 'Height (cm):' %>
-  <%= text_field_tag :height %>
+  <div class="field">
+    <%= label_tag :height, 'Height (cm):', class: 'label' %>
+    <div class="control">
+      <%= text_field_tag :height, nil, class: 'input' %>
+    </div>
+  </div>
 
-  <%= submit_tag 'Calculate BMI' %>
+  <div class="field">
+    <div class="control">
+      <%= submit_tag 'Calculate BMI', class: 'button is-primary' %>
+    </div>
+  </div>
 <% end %>

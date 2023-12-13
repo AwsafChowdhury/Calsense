@@ -1,0 +1,52 @@
+<div class="container">
+  <h1 class="title is-3">Health Experts</h1>
+  <div class="buttons">
+    <%= link_to "Show Doctors", doctors_path, class: "button is-primary" %>
+    <%= link_to "Show Nutrition Experts", nutrition_experts_path, class: "button is-primary" %>
+    <%= link_to "Show Fitness Instructors", fitness_instructors_path, class: "button is-primary" %>
+  </div>
+
+  <div class="columns">
+    <div class="column">
+      <h2 class="title is-4">Nutrition Experts</h2>
+      <ul class="list">
+        <% @nutrition_experts.each do |expert| %>
+          <li>
+            <strong><%= expert.name %></strong><br>
+            <%= expert.organization %><br>
+            <%= expert.contact_info %><br>
+            <%= expert.address %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="column">
+      <h2 class="title is-4">Doctors</h2>
+      <ul class="list">
+        <% @doctors.each do |expert| %>
+          <li>
+            <strong><%= expert.name %></strong><br>
+            <%= expert.organization %><br>
+            <%= expert.contact_info %><br>
+            <%= expert.address %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="column">
+      <h2 class="title is-4">Fitness Instructors</h2>
+      <ul class="list">
+        <% @fitness_instructors.each do |expert| %>
+          <li>
+            <strong><%= expert.name %></strong><br>
+            <%= expert.organization %><br>
+            <%= expert.contact_info %><br>
+            <%= expert.address %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

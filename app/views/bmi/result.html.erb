@@ -1,8 +1,20 @@
-<!-- views/bmi/result.html.erb -->
-<h2>Your BMI Result:</h2>
+<h2 class="title is-3">Your BMI Result:</h2>
 <p>Your BMI: <%= @bmi %></p>
 <p>Condition: <%= @condition %></p>
-<%= link_to "Reset BMI", reset_bmi_path, class: "button is-danger" %>
-<%= link_to "View Personalized Diet Plans", personalized_diet_plans_path(bmi: @bmi, condition: @condition), class: "button is-info" %>
 
-<%= link_to "Go Back to Home", root_path, class: "button is-info" %>
+<%= link_to "Reset BMI", reset_bmi_path, class: "button is-danger is-small" %>
+<%= link_to "View Personalized Diet Plans", personalized_diet_plans_path(bmi: @bmi, condition: @condition), class: "button is-info is-small" %>
+<%= link_to "Go Back to Home", root_path, class: "button is-info is-small" %>
+
+<div>
+  <% if @bmi_category.present? %>
+    <% case @bmi_category %>
+      <% when 'Underweight' %>
+        <%= link_to "Get Expert Help", health_experts_path(category: 'Nutrition Expert'), class: "button is-primary is-small" %>
+      <% when 'Normal Weight' %>
+        <%= link_to "Get Expert Help", health_experts_path(category: 'Fitness Instructor'), class: "button is-primary is-small" %>
+      <% when 'Overweight', 'Obese' %>
+        <%= link_to "Get Expert Help", health_experts_path(category: 'Doctor'), class: "button is-primary is-small" %>
+    <% end %>
+  <% end %>
+</div>

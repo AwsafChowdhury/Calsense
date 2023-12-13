@@ -1,0 +1,13 @@
+
+
+<h1>Nutrition Experts</h1>
+<ul>
+  <% @nutrition_experts.each do |expert| %>
+    <li>
+      <strong><%= expert.name %></strong><br>
+      <%= expert.organization %><br>
+      <%= expert.contact_info %><br>
+      <%= expert.address %>
+    </li>
+  <% end %>
+</ul>
