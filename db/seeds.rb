@@ -69,7 +69,11 @@ HealthExpert.create(
   contact_info: 'toufiq@gmail.com / +8801234576',
   organization: 'Wellness Clinic',
   address: '456 Elm Street, Dhaka, Bangladesh',
+<<<<<<< HEAD
   category: 'Fitness Instructor'
+=======
+  category: 'Fitness Expert'
+>>>>>>> 11030fc831fa29faea48875aadc936640e718551
 )
 
 HealthExpert.create(

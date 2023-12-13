@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1 class="title is-3">All Recipes</h1>
 
 <div class="table-container">
@@ -28,3 +29,33 @@
 </div>
 
 <%= link_to 'New Recipe', new_recipe_path, class: 'button is-success' %>
+=======
+<h1>All Recipes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Meal Category</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @recipes.each do |recipe| %>
+      <tr>
+        <td><%= link_to recipe.name, recipe %></td>
+        <td><%= recipe.category %></td>
+        <td><%= recipe.meal_category %></td>
+        <td>
+          <%= link_to 'Show', recipe %> |
+          <%= link_to 'Edit', edit_recipe_path(recipe) %> |
+          <%= link_to 'Delete', recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Recipe', new_recipe_path %>
+>>>>>>> 11030fc831fa29faea48875aadc936640e718551

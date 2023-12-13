@@ -45,6 +45,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_13_080924) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 11030fc831fa29faea48875aadc936640e718551
   create_table "health_experts", force: :cascade do |t|
     t.string "name"
     t.string "contact_info"
@@ -55,6 +59,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_13_080924) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 6af6cc4a62e120ffdefec049a13694b363eed827
+>>>>>>> 11030fc831fa29faea48875aadc936640e718551
   create_table "nutrition_experts", force: :cascade do |t|
     t.string "name"
     t.string "expertise"

@@ -1,6 +1,10 @@
 <h1>New Recipe</h1>
 
+<<<<<<< HEAD
 <%= form_with(model: @recipe, url: recipes_path) do |form| %>
+=======
+<%= form_with(model: @recipe) do |form| %>
+>>>>>>> 11030fc831fa29faea48875aadc936640e718551
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
