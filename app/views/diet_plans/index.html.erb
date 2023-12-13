@@ -66,24 +66,23 @@
         <% end %>
       </div>
     </div>
-
     <script>
       function filterPlans(category) {
-        var plans = document.querySelectorAll('.box.' + category.toLowerCase().replace(' ', '-'));
+        var plans = document.querySelectorAll('.box');
         plans.forEach(function (plan) {
-            plan.style.display = 'block';
-        });
-
-        var otherPlans = document.querySelectorAll('.box:not(.' + category.toLowerCase().replace(' ', '-') + ')');
-        otherPlans.forEach(function (plan) {
+          var planCategory = plan.querySelector('p:nth-child(2)').innerText.split(': ')[1];
+          if (planCategory !== category) {
             plan.style.display = 'none';
+          } else {
+            plan.style.display = 'block';
+          }
         });
       }
 
       function resetFilters() {
         var plans = document.querySelectorAll('.box');
         plans.forEach(function (plan) {
-            plan.style.display = 'block';
+          plan.style.display = 'block';
         });
       }
     </script>

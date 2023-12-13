@@ -1,0 +1,8 @@
+<!-- views/bmi/result.html.erb -->
+<h2>Your BMI Result:</h2>
+<p>Your BMI: <%= @bmi %></p>
+<p>Condition: <%= @condition %></p>
+<%= link_to "Reset BMI", reset_bmi_path, class: "button is-danger" %>
+<%= link_to "View Personalized Diet Plans", personalized_diet_plans_path(bmi: @bmi, condition: @condition), class: "button is-info" %>
+
+<%= link_to "Go Back to Home", root_path, class: "button is-info" %>

@@ -1,4 +1,5 @@
 class DietPlansController < ApplicationController
+  include BmiHelper
 
   def index
     @weight_loss_plans = DietPlan.where(category: 'Loosing weight')
@@ -24,7 +25,23 @@ class DietPlansController < ApplicationController
   def show
     @plan = DietPlan.find(params[:id])
   end
+  def personalized
+    bmi = params[:bmi].to_f
+    @condition = determine_condition(bmi)
 
+    @diet_plans = case @condition
+                  when 'Underweight'
+                    # Fetch diet plans for underweight category from your database or seeds.rb
+                    DietPlan.where(category: 'Gaining weight')
+                  when 'Normal Weight'
+                    # Fetch diet plans for normal weight category from your database or seeds.rb
+                    DietPlan.where(category: 'Staying Fit')
+                  # Add similar cases for 'Overweight' and 'Obese'
+                  else
+                    # Fetch diet plans for overweight or obese categories
+                    DietPlan.where(category: ['Loosing weight'])
+                  end
+  end
   private
 
   def diet_plan_params

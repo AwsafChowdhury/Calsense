@@ -1,0 +1,74 @@
+<h1>Personalized Diet Plans</h1>
+<p>User BMI: <%= params[:bmi] %></p>
+<p>Condition: <%= @condition %></p>
+
+<% if @condition == 'Underweight' %>
+  <div class="column">
+    <h2 class="title is-4">Gaining Weight Plans</h2>
+    <% @diet_plans.each do |plan| %>
+      <% if plan.category == 'Gaining weight' %>
+        <div class="box loosing-weight">
+          <div class="box mb-4">
+            <p class="subtitle is-6"><strong><%= plan.name %></strong></p>
+            <p><strong>Category:</strong> <%= plan.category %></p>
+            <p><strong>Recommended Calories:</strong> <%= plan.recommended_calories %></p>
+            <p><strong>Breakfast Calories:</strong> <%= plan.breakfast_calories %></p>
+            <p><strong>Lunch Calories:</strong> <%= plan.lunch_calories %></p>
+            <p><strong>Snacks Calories:</strong> <%= plan.snacks_calories %></p>
+            <p><strong>Dinner Calories:</strong> <%= plan.dinner_calories %></p>
+            <p><strong>Carbohydrates:</strong> <%= plan.carbohydrates %></p>
+            <p><strong>Proteins:</strong> <%= plan.proteins %></p>
+            <p><strong>Fats:</strong> <%= plan.fats %></p>
+            <!-- Display other details of the diet plan -->
+            <!-- Add more details here if needed -->
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<% elsif @condition == 'Normal Weight' %>
+  <div class="column">
+    <h2 class="title is-4">Staying Fit Plans</h2>
+    <% @diet_plans.each do |plan| %>
+      <% if plan.category == 'Staying Fit' %>
+        <div class="box staying-fit">
+          <div class="box mb-4">
+            <p class="subtitle is-6"><strong><%= plan.name %></strong></p>
+            <p><strong>Category:</strong> <%= plan.category %></p>
+            <p><strong>Recommended Calories:</strong> <%= plan.recommended_calories %></p>
+            <p><strong>Breakfast Calories:</strong> <%= plan.breakfast_calories %></p>
+            <p><strong>Lunch Calories:</strong> <%= plan.lunch_calories %></p>
+            <p><strong>Snacks Calories:</strong> <%= plan.snacks_calories %></p>
+            <p><strong>Dinner Calories:</strong> <%= plan.dinner_calories %></p>
+            <p><strong>Carbohydrates:</strong> <%= plan.carbohydrates %></p>
+            <p><strong>Proteins:</strong> <%= plan.proteins %></p>
+            <p><strong>Fats:</strong> <%= plan.fats %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<% elsif @condition == 'Overweight' || @condition == 'Obese' %>
+  <div class="column">
+    <h2 class="title is-4">Losing Weight Plans</h2>
+    <% @diet_plans.each do |plan| %>
+      <% if plan.category == 'Loosing weight' %>
+        <div class="box gaining-weight">
+          <div class="box mb-4">
+            <p class="subtitle is-6"><strong><%= plan.name %></strong></p>
+            <p><strong>Category:</strong> <%= plan.category %></p>
+            <p><strong>Recommended Calories:</strong> <%= plan.recommended_calories %></p>
+            <p><strong>Breakfast Calories:</strong> <%= plan.breakfast_calories %></p>
+            <p><strong>Lunch Calories:</strong> <%= plan.lunch_calories %></p>
+            <p><strong>Snacks Calories:</strong> <%= plan.snacks_calories %></p>
+            <p><strong>Dinner Calories:</strong> <%= plan.dinner_calories %></p>
+            <p><strong>Carbohydrates:</strong> <%= plan.carbohydrates %></p>
+            <p><strong>Proteins:</strong> <%= plan.proteins %></p>
+            <p><strong>Fats:</strong> <%= plan.fats %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
+

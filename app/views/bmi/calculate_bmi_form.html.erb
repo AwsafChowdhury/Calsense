@@ -1,0 +1,9 @@
+<%= form_tag(calculate_bmi_path, method: :post) do %>
+  <%= label_tag :weight, 'Weight (kg):' %>
+  <%= text_field_tag :weight %>
+
+  <%= label_tag :height, 'Height (cm):' %>
+  <%= text_field_tag :height %>
+
+  <%= submit_tag 'Calculate BMI' %>
+<% end %>
