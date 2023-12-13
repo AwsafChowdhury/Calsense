@@ -1,0 +1,2 @@
+class HealthExpert < ApplicationRecord
+end
