@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   get '/result', to: 'bmi#result', as: 'result'
   get '/reset_bmi', to: 'bmi#reset_bmi', as: 'reset_bmi'
   get 'personalized_diet_plans', to: 'diet_plans#personalized', as: 'personalized_diet_plans'
-
-
+  resources :diet_plans
+  resources :recipes
 
 
   resources :surveys

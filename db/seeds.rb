@@ -1,4 +1,14 @@
 # db/seeds.rb
+# db/seeds.rb
+nutrition_expert = NutritionExpert.create!(
+  name: 'Doctorstrange',
+  expertise: 'Nutrition',
+  password: 'pass123',
+  password_confirmation: 'pass123'
+)
+
+# Run `rails db:seed` in the terminal to execute the seed file
+
 
 # Ensure any existing plans are deleted before seeding (optional)
 DietPlan.destroy_all

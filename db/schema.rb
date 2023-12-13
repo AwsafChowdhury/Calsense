@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_12_154156) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_13_054601) do
   create_table "admin_users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
@@ -31,6 +31,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_12_154156) do
     t.integer "carbohydrates"
     t.integer "proteins"
     t.integer "fats"
+    t.integer "nutrition_expert_id", default: 1
+    t.index ["nutrition_expert_id"], name: "index_diet_plans_on_nutrition_expert_id"
   end
 
   create_table "entries", force: :cascade do |t|
@@ -39,6 +41,23 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_12_154156) do
     t.integer "carbohydrates"
     t.integer "proteins"
     t.integer "fats"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "nutrition_experts", force: :cascade do |t|
+    t.string "name"
+    t.string "expertise"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "password_digest"
+  end
+
+  create_table "recipes", force: :cascade do |t|
+    t.string "name"
+    t.string "category"
+    t.string "meal_category"
+    t.text "instructions"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -64,4 +83,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_12_154156) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "diet_plans", "nutrition_experts"
 end
